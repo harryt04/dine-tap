@@ -8,6 +8,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import DarkModeSwitch from './components/darkModeSwitch'
 import { useIsMobile } from './context-providers/IsMobileProvider'
+import Image from 'next/image'
 
 const Home = () => {
   const isMobile = useIsMobile()
@@ -20,11 +21,19 @@ const Home = () => {
 
   return (
     <div className="center">
-      <div className="title-container">
+      <div className="header-container">
+      <Image
+          src="/android-chrome-512x512.png"
+          width={logoSize}
+          height={logoSize}
+          unoptimized
+          alt="logo"
+          className="logo"
+        />
         <Typography variant={isMobile ? 'h3' : 'h2'}>DineOn</Typography>
-        <DarkModeSwitch />
       </div>
       <div className="spacer"></div>
+        <DarkModeSwitch />
     </div>
   )
 }

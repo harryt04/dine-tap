@@ -22,3 +22,11 @@ body {
   align-items: center;
   row-gap: 1rem;
 }
+
+.header-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1rem;
+  padding-top: 4rem;
+}
