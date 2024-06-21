@@ -8,7 +8,7 @@ import { IsMobileProvider } from './context-providers/IsMobileProvider'
 import ThemeProvider from './context-providers/CustomThemeProvider'
 
 export const metadata: Metadata = {
-  title: 'Route Roulette',
+  title: 'Dine On',
   description: 'Randomly choose a restaurant near you',
 }
 
