@@ -1,7 +1,6 @@
 // Home.tsx
 'use client'
 import React from 'react'
-import { Typography } from '@mui/material'
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
@@ -9,6 +8,7 @@ import '@fontsource/roboto/700.css'
 import DarkModeSwitch from './components/darkModeSwitch'
 import { useIsMobile } from './context-providers/IsMobileProvider'
 import Image from 'next/image'
+import { Typography } from '@mui/material'
 
 const Home = () => {
   const isMobile = useIsMobile()
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className="center">
       <div className="header-container">
-      <Image
+        <Image
           src="/android-chrome-512x512.png"
           width={logoSize}
           height={logoSize}
@@ -33,7 +33,8 @@ const Home = () => {
         <Typography variant={isMobile ? 'h3' : 'h2'}>DineOn</Typography>
       </div>
       <div className="spacer"></div>
-        <DarkModeSwitch />
+      <DarkModeSwitch />
+      <Typography></Typography>
     </div>
   )
 }
