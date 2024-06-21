@@ -34,7 +34,6 @@ const Home = () => {
       </div>
       <div className="spacer"></div>
       <DarkModeSwitch />
-      <Typography></Typography>
     </div>
   )
 }
