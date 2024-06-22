@@ -30,7 +30,7 @@ const Home = () => {
           alt="logo"
           className="logo"
         />
-        <Typography variant={isMobile ? 'h3' : 'h2'}>DineOn</Typography>
+        <Typography variant={isMobile ? 'h3' : 'h2'}>DineTap</Typography>
       </div>
       <div className="spacer"></div>
       <DarkModeSwitch />

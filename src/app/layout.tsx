@@ -9,8 +9,8 @@ import ThemeProvider from './context/CustomThemeProvider'
 import { AuthProvider } from './context/AuthContext'
 
 export const metadata: Metadata = {
-  title: 'Dine On',
-  description: 'Randomly choose a restaurant near you',
+  title: 'DineTap',
+  description: 'Restaurant menus as a service',
 }
 
 export default function RootLayout({
