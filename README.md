@@ -1,4 +1,4 @@
-# Dine-on
+# Dine-tap
 
 A restaurant front-house logistics ideal product I would want if I were a restaurant owner.
 
@@ -9,4 +9,4 @@ A restaurant front-house logistics ideal product I would want if I were a restau
 - [Vercel](https://vercel.com/docs/frameworks/nextjs)
 - [Material UI](https://mui.com/)
 
-[Visit DineOn](https://dineon.app)
+[Visit DineTap](https://dinetap.app)
