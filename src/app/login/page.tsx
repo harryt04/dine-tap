@@ -17,7 +17,7 @@ const Login: React.FC = () => {
               Sign in with Google
             </Typography>
             <Button
-              variant="contained"
+              variant="outlined"
               color="error"
               onClick={signInWithGoogle}
               startIcon={<GoogleIcon />}
@@ -30,7 +30,6 @@ const Login: React.FC = () => {
     )
   }
 
-  console.log('user.photoURL: ', user.photoURL)
   return (
     <Container maxWidth="sm">
       <Card>
