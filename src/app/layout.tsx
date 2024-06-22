@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { IsMobileProvider } from './context-providers/IsMobileProvider'
 import ThemeProvider from './context-providers/CustomThemeProvider'
+import { AuthProvider } from './context-providers/AuthContext'
 
 export const metadata: Metadata = {
   title: 'Dine On',
@@ -43,17 +44,19 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider>
             <IsMobileProvider>
-              <body>{children}</body>
-
-              {isProduction && (
-                <>
-                  <Analytics />
-                  <SpeedInsights />
-                </>
-              )}
+              <AuthProvider>
+                <body>{children}</body>
+              </AuthProvider>
             </IsMobileProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
+
+        {isProduction && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </html>
     </>
   )
