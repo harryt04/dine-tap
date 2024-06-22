@@ -8,19 +8,17 @@ import { useIsMobile } from './context/IsMobileProvider'
 import Image from 'next/image'
 import { Typography } from '@mui/material'
 import { Footer } from './components/footer'
-import { useAuth } from './context/AuthContext'
-import { useRouter } from 'next/navigation'
+// import { useAuth } from './context/AuthContext'
+// import { useRouter } from 'next/navigation'
 
 const Home = () => {
-  const router = useRouter()
-  const isMobile = useIsMobile()
-  const { user, userLoading } = useAuth()
-  console.log('userLoading: ', userLoading)
-  console.log('user: ', user)
+  // const router = useRouter()
+  // const { user, userLoading } = useAuth()
+  // if (!userLoading && !user) {
+  //   router.push('/login')
+  // }
 
-  if (!userLoading && !user) {
-    router.push('/login')
-  }
+  const isMobile = useIsMobile()
 
   if (isMobile === null) {
     return null
