@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Card, CardContent, Divider, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 import { useIsMobile } from '../context/IsMobileProvider'
@@ -8,6 +8,8 @@ import LocalMallIcon from '@mui/icons-material/LocalMall'
 import EventSeatIcon from '@mui/icons-material/EventSeat'
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
+import SignUpButton from './signUpButton'
+import { DarkModeSwitch } from './darkModeSwitch'
 
 type DTFeature = {
   title: string
@@ -78,6 +80,7 @@ export const Landing = () => {
       </div>
 
       <div className="center landing-content">
+        <DarkModeSwitch />
         <Typography variant={isMobile ? 'h5' : 'h4'}>
           Digital restaurant menus as a service, for a digital age.
         </Typography>
@@ -85,19 +88,95 @@ export const Landing = () => {
         <div className="spacer"></div>
         <div className="feature-grid">
           {features.map((feature) => (
-            <div className="feature" key={feature.title}>
+            <Card className="feature" key={feature.title}>
               {feature.icon}
               <div>
                 <Typography variant="h5">{feature.title}</Typography>
                 <Typography variant="body1">{feature.description}</Typography>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         <div className="spacer"></div>
         <Typography variant={isMobile ? 'h4' : 'h3'}>Pricing</Typography>
-        <div className="pricing-container"></div>
+
+        <div className="spacer"></div>
+        <Typography variant="h6">
+          DineTap is free to use for all restaurant guests.{' '}
+        </Typography>
+        <div className="pricing-container">
+          <Card className="pricing-card">
+            <div className="pricing-card-title">
+              <Typography variant="h4">Free - Coming soon</Typography>
+              <Typography variant="h5">$0</Typography>
+              <Typography variant="caption">
+                Perfect for small places. Kitchen features not included.
+              </Typography>
+            </div>
+            <div className="center">
+              <SignUpButton label="Join waitlist" />
+            </div>
+            <div className="spacer"></div>
+            <Divider />
+            <CardContent style={{ paddingBottom: 0 }}>
+              <ul>
+                <li>🏠 1 restaurant</li>
+                <li>👤 1 admin user</li>
+                <li>📋 Digital menu</li>
+                <li>🪑 Up to 20 tables</li>
+                <li>Front house features included:</li>
+                <ul>
+                  <li>📱 QR code table menu</li>
+                  <li>🛎️ Call waiter</li>
+                </ul>
+              </ul>
+            </CardContent>
+          </Card>
+          <Card className="pricing-card">
+            <div className="pricing-card-title">
+              <Typography variant="h4">Pro - Coming soon</Typography>
+              <Typography variant="h5">
+                <span
+                  style={{
+                    textDecoration: 'line-through',
+                    marginRight: '10px',
+                    color: 'lightgray',
+                  }}
+                >
+                  $500
+                </span>
+                $100 / month
+              </Typography>
+              <Typography variant="caption">
+                Early adopter price. Limited time offer, 80% off.
+              </Typography>
+            </div>
+            <div className="center">
+              <SignUpButton label="Join waitlist" />
+            </div>
+            <div className="spacer"></div>
+
+            <Divider />
+            <CardContent style={{ paddingBottom: 0 }}>
+              <ul>
+                <li>🏠 Unlimited restaurants</li>
+                <li>👤 Unlimited admin users</li>
+                <li>🪑 Unlimited tables per restaurant</li>
+                <li>
+                  Front house features <br />
+                  All the features of the free tier +
+                </li>
+                <ul>
+                  <li>📱 Take orders from digital menu</li>
+                  <li>💳 Optionally take payment through DineTap</li>
+                  <li>📅 Table reservations</li>
+                  <li>⏰ Orders ahead of reservation time</li>
+                </ul>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </>
   )
