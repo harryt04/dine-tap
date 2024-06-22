@@ -1,6 +1,6 @@
 import { Card, CardContent, Divider, Typography } from '@mui/material'
 import Image from 'next/image'
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { useIsMobile } from '../context/IsMobileProvider'
 import QrCodeIcon from '@mui/icons-material/QrCode'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
