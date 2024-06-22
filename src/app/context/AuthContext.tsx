@@ -1,17 +1,19 @@
 'use client'
-import React, { createContext, useContext, ReactNode } from 'react'
+import React, { createContext, useContext, ReactNode, useState } from 'react'
 import { auth, signInWithPopup, signOut } from '../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { User } from 'firebase/auth'
 import { GoogleAuthProvider } from 'firebase/auth'
+import { useRouter } from 'next/navigation'
 
 type AuthProvider = 'google' | 'apple' | ''
 
 interface AuthContextType {
   user: User | null | undefined
-  signInWithGoogle: () => Promise<void>
+  signInWithGoogle: (redirectUri?: string) => Promise<void>
   signOut: () => Promise<void>
   authProvider?: AuthProvider
+  userLoading: boolean
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -19,16 +21,20 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [authProvider, setAuthProvider] = React.useState<AuthProvider>()
-  const [user] = useAuthState(auth)
+  const [authProvider, setAuthProvider] = useState<AuthProvider>()
+  const [user, userLoading] = useAuthState(auth)
+  const router = useRouter()
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async (redirectUri?: string) => {
     try {
       // Force the Google sign-in process to prompt the user to select an account
       const customProvider = new GoogleAuthProvider()
       customProvider.setCustomParameters({ prompt: 'select_account' })
       await signInWithPopup(auth, customProvider)
       setAuthProvider('google')
+      if (redirectUri) {
+        router.push(redirectUri)
+      }
     } catch (error) {
       console.error(error)
     }
@@ -47,7 +53,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
   return (
     <AuthContext.Provider
-      value={{ user, signInWithGoogle, signOut: signOutUser, authProvider }}
+      value={{
+        user,
+        signInWithGoogle,
+        signOut: signOutUser,
+        authProvider,
+        userLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

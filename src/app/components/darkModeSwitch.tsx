@@ -23,7 +23,7 @@ const DarkModeToggle = styled(Switch)(({ theme }) => ({
   },
 }))
 
-const DarkModeSwitch = () => {
+export const DarkModeSwitch = () => {
   const { theme, toggleDarkMode } = useThemeContext()
   return (
     <Box display="flex" justifyContent="center" alignItems="center" padding={2}>
@@ -45,5 +45,3 @@ const DarkModeSwitch = () => {
     </Box>
   )
 }
-
-export default DarkModeSwitch
