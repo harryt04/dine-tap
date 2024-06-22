@@ -50,7 +50,7 @@ const Login: React.FC = () => {
             <Typography variant="caption" className="email">
               {user.email}
             </Typography>
-            <Button variant="contained" color="primary" onClick={signOut}>
+            <Button variant="contained" color="secondary" onClick={signOut}>
               Sign out
             </Button>
           </div>
