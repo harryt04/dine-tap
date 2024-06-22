@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { Container, Card, CardContent, Button, Typography } from '@mui/material'
-import { AuthProvider, useAuth } from '../context-providers/AuthContext'
+import { AuthProvider, useAuth } from '../context/AuthContext'
 import Image from 'next/image'
 import GoogleIcon from '@mui/icons-material/Google'
 

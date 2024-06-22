@@ -4,9 +4,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { IsMobileProvider } from './context-providers/IsMobileProvider'
-import ThemeProvider from './context-providers/CustomThemeProvider'
-import { AuthProvider } from './context-providers/AuthContext'
+import { IsMobileProvider } from './context/IsMobileProvider'
+import ThemeProvider from './context/CustomThemeProvider'
+import { AuthProvider } from './context/AuthContext'
 
 export const metadata: Metadata = {
   title: 'Dine On',

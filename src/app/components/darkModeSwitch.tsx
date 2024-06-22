@@ -7,7 +7,7 @@ import Tooltip from '@mui/material/Tooltip'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import Box from '@mui/material/Box'
-import { useThemeContext } from '../context-providers/CustomThemeProvider'
+import { useThemeContext } from '../context/CustomThemeProvider'
 
 const DarkModeToggle = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase': {

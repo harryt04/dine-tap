@@ -6,7 +6,7 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import DarkModeSwitch from './components/darkModeSwitch'
-import { useIsMobile } from './context-providers/IsMobileProvider'
+import { useIsMobile } from './context/IsMobileProvider'
 import Image from 'next/image'
 import { Typography } from '@mui/material'
 
