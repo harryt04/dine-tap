@@ -10,6 +10,7 @@ import FastfoodIcon from '@mui/icons-material/Fastfood'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import SignUpButton from './signUpButton'
 import { DarkModeSwitch } from './darkModeSwitch'
+import '../styles/landing.css'
 
 type DineTapFeature = {
   title: string

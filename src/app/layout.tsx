@@ -1,7 +1,7 @@
 // RootLayout.js
 import type { Metadata } from 'next'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
-import './globals.css'
+import './styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { IsMobileProvider } from './context/IsMobileProvider'
