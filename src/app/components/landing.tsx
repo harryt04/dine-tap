@@ -97,7 +97,7 @@ export const Landing = () => {
         </div>
 
         <div className="spacer"></div>
-        <Typography variant={isMobile ? 'h4' : 'h3'}>Pricing</Typography>
+        <Typography variant={isMobile ? 'h3' : 'h2'}>Pricing</Typography>
 
         <div className="spacer"></div>
         <Typography variant="h6">
@@ -105,7 +105,6 @@ export const Landing = () => {
         </Typography>
         <div className="pricing-container">
           <Card className="pricing-card">
-            <div className="spacer"></div>
             <div className="pricing-card-title">
               <Typography variant="h4">Free - Coming Soon</Typography>
               <Typography variant="h5">$0</Typography>
@@ -122,10 +121,10 @@ export const Landing = () => {
               <ul>
                 <li>🏠 1 restaurant</li>
                 <li>👤 1 admin user</li>
-                <li>📋 Digital menu</li>
                 <li>🪑 Up to 20 tables</li>
                 <li>Front house features:</li>
                 <ul>
+                  <li>📋 Digital restaurant menu</li>
                   <li>📱 QR code table menu</li>
                   <li>🛎️ Call waiter</li>
                 </ul>

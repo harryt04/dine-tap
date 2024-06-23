@@ -104,3 +104,20 @@ ul {
     grid-template-columns: 1fr;
   }
 }
+
+/* if viewing on large screen */
+@media (min-width: 1024px) {
+  .feature-grid {
+    grid-template-columns: auto auto auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    padding: 1rem 4rem;
+  }
+
+  .pricing-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(400px, 1fr) minmax(400px, 1fr)
+    );
+  }
+}
