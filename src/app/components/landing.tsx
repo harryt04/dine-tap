@@ -30,7 +30,7 @@ export const Landing = () => {
     {
       title: 'QR Code table menus',
       description:
-        "Generate a QR code to print and place on each table, so customers can scan the code and view the menu on their phone. No need to print menus if there's a menu change, , and no need to worry about sanitizing menus between customers.",
+        "Generate a QR code for each table, so customers can scan the code and view the menu on their phone. No need to print menus if there's a menu change, and no need to worry about sanitizing menus between customers.",
       icon: <QrCodeIcon sx={{ fontSize: 75, color: '#4CAF50' }} />,
     },
     {
@@ -41,8 +41,7 @@ export const Landing = () => {
     },
     {
       title: 'Order from the digital menu',
-      description:
-        'Allow your users to order from the digital menu, and have the order sent directly to the kitchen. No more waiting around for the waiter to take your order, or potential mistakes in the order on the waiter’s part.',
+      description: `Allow your users to order from the digital menu, and have the order sent directly to the kitchen. No more waiting around for the waiter to take your order, or potential mistakes in the order on the waiter's part.`,
       icon: <LocalMallIcon sx={{ fontSize: 75, color: '#3F51B5' }} />,
     },
     {
@@ -107,6 +106,7 @@ export const Landing = () => {
         </Typography>
         <div className="pricing-container">
           <Card className="pricing-card">
+            <div className="spacer"></div>
             <div className="pricing-card-title">
               <Typography variant="h4">Free - Coming soon</Typography>
               <Typography variant="h5">$0</Typography>
