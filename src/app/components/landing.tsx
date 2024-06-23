@@ -28,38 +28,37 @@ export const Landing = () => {
 
   const features: DTFeature[] = [
     {
-      title: 'QR Code table menus',
+      title: 'QR Code Table Menus',
       description:
-        "Generate a QR code for each table, so customers can scan the code and view the menu on their phone. No need to print menus if there's a menu change, and no need to worry about sanitizing menus between customers.",
+        'Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers.',
       icon: <QrCodeIcon sx={{ fontSize: 75, color: '#4CAF50' }} />,
     },
     {
-      title: 'Manage your menu items and prices',
-      description:
-        'Hide an item from the menu if you run out of inventory, or change the market price of an item.',
+      title: 'Manage Menu Items and Prices',
+      description: 'Easily hide out-of-stock items or update market prices.',
       icon: <RestaurantIcon sx={{ fontSize: 75, color: '#FF9800' }} />,
     },
     {
-      title: 'Order from the digital menu',
-      description: `Allow your users to order from the digital menu, and have the order sent directly to the kitchen. No more waiting around for the waiter to take your order, or potential mistakes in the order on the waiter's part.`,
+      title: 'Order from Digital Menu',
+      description: `Customers can order directly from the digital menu, sending orders straight to the kitchen, minimizing wait times and order errors.`,
       icon: <LocalMallIcon sx={{ fontSize: 75, color: '#3F51B5' }} />,
     },
     {
-      title: 'Table reservations',
+      title: 'Table Reservations',
       description:
-        'Manage your table configuration in your restaurant, and allow customers to reserve a table ahead of time. Short staffed? Limit the number of reservations for that day.',
+        'Manage table configurations and allow customers to reserve tables in advance. Control reservation limits during staff shortages.',
       icon: <EventSeatIcon sx={{ fontSize: 75, color: '#E91E63' }} />,
     },
     {
-      title: 'Order ahead of time',
+      title: 'Order Ahead',
       description:
-        'If you want, allow customers to order ahead of time, so their food is ready when they arrive. Your table turnover rate will increase, and customers will be happier.',
+        'Enable customers to order ahead so their food is ready upon arrival, improving table turnover rates and customer satisfaction.',
       icon: <FastfoodIcon sx={{ fontSize: 75, color: '#9C27B0' }} />,
     },
     {
-      title: 'Call wait staff',
+      title: 'Call Wait Staff',
       description:
-        'Nothing is worse than waiting around for your waiter to finally notice you. Allow your customers to call a waiter to their table, without having to flag them down. This will increase customer satisfaction, and allow your wait staff to be more efficient.',
+        'Allow customers to call a waiter to their table digitally, enhancing efficiency and customer satisfaction.',
       icon: <NotificationsActiveIcon sx={{ fontSize: 75, color: '#F44336' }} />,
     },
   ]
@@ -81,7 +80,7 @@ export const Landing = () => {
       <div className="center landing-content">
         <DarkModeSwitch />
         <Typography variant={isMobile ? 'h5' : 'h4'}>
-          Digital restaurant menus as a service, for a digital age.
+          Digital restaurant menus as a service for the digital age.
         </Typography>
 
         <div className="spacer"></div>
@@ -102,20 +101,20 @@ export const Landing = () => {
 
         <div className="spacer"></div>
         <Typography variant="h6">
-          DineTap is free to use for all restaurant guests.{' '}
+          DineTap is free for all restaurant guests.
         </Typography>
         <div className="pricing-container">
           <Card className="pricing-card">
             <div className="spacer"></div>
             <div className="pricing-card-title">
-              <Typography variant="h4">Free - Coming soon</Typography>
+              <Typography variant="h4">Free - Coming Soon</Typography>
               <Typography variant="h5">$0</Typography>
               <Typography variant="caption">
-                Perfect for small places. Kitchen features not included.
+                Ideal for small venues. Kitchen features not included.
               </Typography>
             </div>
             <div className="center">
-              <SignUpButton label="Join waitlist" />
+              <SignUpButton label="Join Waitlist" />
             </div>
             <div className="spacer"></div>
             <Divider />
@@ -125,7 +124,7 @@ export const Landing = () => {
                 <li>👤 1 admin user</li>
                 <li>📋 Digital menu</li>
                 <li>🪑 Up to 20 tables</li>
-                <li>Front house features included:</li>
+                <li>Front house features:</li>
                 <ul>
                   <li>📱 QR code table menu</li>
                   <li>🛎️ Call waiter</li>
@@ -135,13 +134,13 @@ export const Landing = () => {
           </Card>
           <Card className="pricing-card">
             <div className="pricing-card-title">
-              <Typography variant="h4">Pro - Coming soon</Typography>
+              <Typography variant="h4">Pro - Coming Soon</Typography>
               <Typography variant="h5">
                 <span
                   style={{
                     textDecoration: 'line-through',
                     marginRight: '10px',
-                    color: 'lightgray',
+                    color: 'gray',
                   }}
                 >
                   $500
@@ -153,10 +152,9 @@ export const Landing = () => {
               </Typography>
             </div>
             <div className="center">
-              <SignUpButton label="Join waitlist" />
+              <SignUpButton label="Join Waitlist" />
             </div>
             <div className="spacer"></div>
-
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
@@ -165,11 +163,11 @@ export const Landing = () => {
                 <li>🪑 Unlimited tables per restaurant</li>
                 <li>
                   Front house features <br />
-                  All the features of the free tier +
+                  All Free tier features plus:
                 </li>
                 <ul>
                   <li>📱 Take orders from digital menu</li>
-                  <li>💳 Optionally take payment through DineTap</li>
+                  <li>💳 Option to accept payments via DineTap</li>
                   <li>📅 Table reservations</li>
                   <li>⏰ Orders ahead of reservation time</li>
                 </ul>

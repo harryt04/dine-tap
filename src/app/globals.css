@@ -89,7 +89,10 @@ body {
   text-align: center;
   padding-bottom: 1rem;
 }
-s
+
+ul {
+  text-indent: 0.5rem;
+}
 
 /* if using small screen */
 @media (max-width: 768px) {
