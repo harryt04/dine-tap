@@ -111,7 +111,7 @@ li {
 
   .free-card {
     grid-column: span 2;
-    min-width: 40vw;
+    min-width: 33vw;
     justify-self: center;
   }
 }
