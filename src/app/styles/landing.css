@@ -57,10 +57,6 @@ li {
   place-items: center;
 }
 
-.gray-text {
-  color: rgb(160, 160, 160);
-}
-
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {

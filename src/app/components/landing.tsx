@@ -138,7 +138,9 @@ export const Landing = () => {
         <div className="billing-toggle-container">
           <Typography
             variant="h6"
-            className={billedAnnually ? 'gray-text' : ''}
+            style={{
+              color: billedAnnually ? theme.palette.text.disabled : 'inherit',
+            }}
           >
             Billed monthly
           </Typography>
@@ -148,7 +150,9 @@ export const Landing = () => {
           />
           <Typography
             variant="h6"
-            className={!billedAnnually ? 'gray-text' : ''}
+            style={{
+              color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
+            }}
           >
             Billed annually (save {pricingConfig.discountPercentage})
           </Typography>
@@ -191,7 +195,7 @@ export const Landing = () => {
                   style={{
                     textDecoration: 'line-through',
                     marginRight: '10px',
-                    color: 'gray',
+                    color: theme.palette.text.disabled,
                   }}
                 >
                   {`${billedAnnually ? pricingConfig.pro.annually.normalPrice : pricingConfig.pro.monthly.normalPrice}`}
@@ -240,7 +244,7 @@ export const Landing = () => {
                   style={{
                     textDecoration: 'line-through',
                     marginRight: '10px',
-                    color: 'gray',
+                    color: theme.palette.text.disabled,
                   }}
                 >
                   {`${billedAnnually ? pricingConfig.enterprise.annually.normalPrice : pricingConfig.enterprise.monthly.normalPrice}`}
