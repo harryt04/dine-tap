@@ -19,6 +19,7 @@ const Home = () => {
   return (
     <div className="center">
       <Landing />
+      <Footer />
     </div>
   )
 }

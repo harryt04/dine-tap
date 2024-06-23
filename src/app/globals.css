@@ -54,6 +54,7 @@ body {
   column-gap: 2rem;
   row-gap: 2rem;
   text-align: left;
+  max-width: 85rem;
 }
 
 .feature {
@@ -95,6 +96,10 @@ body {
 
 ul {
   text-indent: 0.5rem;
+}
+
+li {
+  padding-bottom: 0.25rem;
 }
 
 /* if viewing on tablet screen */

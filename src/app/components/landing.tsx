@@ -119,7 +119,7 @@ export const Landing = () => {
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>🏠 1 restaurant</li>
+                <li>🏠 1 restaurant/location</li>
                 <li>👤 1 admin user</li>
                 <li>🪑 Up to 20 tables</li>
                 <li>Front house features:</li>
