@@ -1,4 +1,3 @@
-// IsMobileProvider.tsx
 'use client'
 import React, {
   createContext,
