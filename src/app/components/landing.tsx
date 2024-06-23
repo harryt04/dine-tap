@@ -157,7 +157,7 @@ export const Landing = () => {
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>🏠 Unlimited restaurants</li>
+                <li>🏠 Unlimited restaurants/locations</li>
                 <li>👤 Unlimited admin users</li>
                 <li>🪑 Unlimited tables per restaurant</li>
                 <li>
