@@ -22,7 +22,13 @@ const Admin = () => {
           so here.
         </Typography>
         <div className="spacer"></div>
-        <SignUpButton label="Join Waitlist" />
+        <SignUpButton label="Join DineTap Waitlist" />
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+        <Typography variant="h6">
+          If you are a restaurant guest, please scan the QR code at your table
+          or ask your waiter for help.
+        </Typography>
       </div>
     </>
   )
