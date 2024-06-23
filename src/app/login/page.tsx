@@ -4,26 +4,34 @@ import { Container, Card, CardContent, Button, Typography } from '@mui/material'
 import { useAuth } from '../context/AuthContext'
 import Image from 'next/image'
 import GoogleIcon from '@mui/icons-material/Google'
+import Header from '../components/header'
+import '../styles/login.css'
+import { useRouter } from 'next/navigation'
 
 const Login: React.FC = () => {
+  const router = useRouter()
   const { signInWithGoogle, user, signOut } = useAuth()
 
   if (!user || !user.uid) {
     return (
       <Container maxWidth="sm">
+        <Header />
+        <div className="spacer"></div>
         <Card>
-          <CardContent>
-            <Typography variant="h5" gutterBottom>
-              Sign in with Google
-            </Typography>
-            <Button
-              variant="outlined"
-              color="error"
-              onClick={() => signInWithGoogle('/')}
-              startIcon={<GoogleIcon />}
-            >
-              Sign in with Google
-            </Button>
+          <CardContent className="center">
+            <div className="sign-in-container">
+              <Typography variant="h6" gutterBottom>
+                Please login to access the admin dashboard.
+              </Typography>
+              <Button
+                variant="outlined"
+                color="error"
+                onClick={() => signInWithGoogle('/')}
+                startIcon={<GoogleIcon />}
+              >
+                Sign in with Google
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </Container>
@@ -32,10 +40,13 @@ const Login: React.FC = () => {
 
   return (
     <>
+      <Header />
+      <div className="spacer"></div>
       <Container maxWidth="sm">
         <Card>
-          <CardContent>
+          <CardContent className="center">
             <Typography variant="h5">You are signed in as</Typography>
+            <div className="spacer"></div>
             <div className="user-header-container">
               <Image
                 unoptimized
@@ -51,7 +62,14 @@ const Login: React.FC = () => {
               <Typography variant="caption" className="email">
                 {user.email}
               </Typography>
-              <Button variant="contained" color="primary" onClick={signOut}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => router.push('/admin')}
+              >
+                Continue to App
+              </Button>
+              <Button variant="contained" color="secondary" onClick={signOut}>
                 Sign out
               </Button>
             </div>

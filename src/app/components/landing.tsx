@@ -11,6 +11,7 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import SignUpButton from './signUpButton'
 import { DarkModeSwitch } from './darkModeSwitch'
 import '../styles/landing.css'
+import Header from './header'
 
 type DineTapFeature = {
   title: string
@@ -24,8 +25,6 @@ export const Landing = () => {
   if (isMobile === null) {
     return null
   }
-
-  const logoSize = isMobile ? 60 : 75
 
   const features: DineTapFeature[] = [
     {
@@ -67,17 +66,7 @@ export const Landing = () => {
 
   return (
     <>
-      <div className="header-container">
-        <Image
-          src="/android-chrome-512x512.png"
-          width={logoSize}
-          height={logoSize}
-          unoptimized
-          alt="logo"
-          className="logo"
-        />
-        <Typography variant={isMobile ? 'h3' : 'h2'}>DineTap</Typography>
-      </div>
+      <Header />
 
       <div className="center landing-content">
         <DarkModeSwitch />
