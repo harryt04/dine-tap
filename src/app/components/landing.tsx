@@ -65,7 +65,7 @@ export const Landing = () => {
     {
       title: 'Order Ahead',
       description:
-        'Enable customers to order ahead so their food is ready upon arrival. This improves table turnover rates and enhances customer satisfaction.',
+        'Enable customers to order ahead so their food is ready upon arrival. This improves table turnover rates and enhances customer satisfaction. You can collect payment up front or at the end of their visit.',
       icon: <FastfoodIcon sx={{ fontSize: 75, color: '#9C27B0' }} />,
     },
     {
