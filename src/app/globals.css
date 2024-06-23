@@ -48,7 +48,7 @@ body {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: auto auto auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
   column-gap: 2rem;
@@ -72,7 +72,10 @@ body {
 
 .pricing-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr) minmax(300px, 1fr)
+  );
   column-gap: 2rem;
   row-gap: 2rem;
   padding-top: 2rem;
@@ -94,6 +97,13 @@ ul {
   text-indent: 0.5rem;
 }
 
+/* if viewing on tablet screen */
+@media (max-width: 1099px) {
+  .feature-grid {
+    grid-template-columns: auto auto;
+  }
+}
+
 /* if using small screen */
 @media (max-width: 768px) {
   .feature-grid {
@@ -102,22 +112,5 @@ ul {
 
   .pricing-container {
     grid-template-columns: 1fr;
-  }
-}
-
-/* if viewing on large screen */
-@media (min-width: 1024px) {
-  .feature-grid {
-    grid-template-columns: auto auto auto;
-    column-gap: 2rem;
-    row-gap: 2rem;
-    padding: 1rem 4rem;
-  }
-
-  .pricing-container {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(400px, 1fr) minmax(400px, 1fr)
-    );
   }
 }
