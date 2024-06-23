@@ -77,6 +77,7 @@ export const Landing = () => {
   ]
 
   const pricingConfig = {
+    discountPercentage: '20%',
     pro: {
       monthly: {
         normalPrice: '$250',
@@ -93,12 +94,6 @@ export const Landing = () => {
     },
   }
 
-  const proPrice = billedAnnually
-    ? pricingConfig.pro.annually
-    : pricingConfig.pro.monthly
-  const ePrice = billedAnnually
-    ? pricingConfig.enterprise.annually
-    : pricingConfig.enterprise.monthly
   const billingTerm = billedAnnually ? 'annually' : 'monthly'
 
   const getPriceString = (price: 'pro' | 'enterprise') => {
@@ -155,7 +150,7 @@ export const Landing = () => {
             variant="h6"
             className={!billedAnnually ? 'gray-text' : ''}
           >
-            Billed annually
+            Billed annually (save {pricingConfig.discountPercentage})
           </Typography>
         </div>
 
