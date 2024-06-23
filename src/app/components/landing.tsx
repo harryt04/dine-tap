@@ -47,7 +47,8 @@ export const Landing = () => {
     },
     {
       title: 'Manage Menu Items and Prices',
-      description: 'Easily hide out-of-stock items or update market prices.',
+      description:
+        'Easily hide out-of-stock items or update market prices. Keep your menu current without the hassle of explaining unavailable dishes or market prices.',
       icon: <RestaurantIcon sx={{ fontSize: 75, color: '#FF9800' }} />,
     },
     {
