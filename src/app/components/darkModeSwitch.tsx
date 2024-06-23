@@ -9,12 +9,12 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import Box from '@mui/material/Box'
 import { useThemeContext } from '../context/CustomThemeProvider'
 
-const DarkModeToggle = styled(Switch)(({ theme }) => ({
+export const DTThemedToggle = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-switchBase': {
     '&.Mui-checked': {
-      color: theme.palette.warning.main,
+      color: theme.palette.primary.main,
       '& + .MuiSwitch-track': {
-        backgroundColor: theme.palette.warning.main,
+        backgroundColor: theme.palette.primary.main,
       },
     },
   },
@@ -38,7 +38,7 @@ export const DarkModeSwitch = () => {
           {theme.palette.mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
       </Tooltip>
-      <DarkModeToggle
+      <DTThemedToggle
         checked={theme.palette.mode === 'dark'}
         onChange={toggleDarkMode}
       />

@@ -51,6 +51,16 @@ li {
   padding-bottom: 0.25rem;
 }
 
+.billing-toggle-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
+}
+
+.gray-text {
+  color: rgb(160, 160, 160);
+}
+
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {

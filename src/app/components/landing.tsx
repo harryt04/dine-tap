@@ -1,6 +1,13 @@
-import { Card, CardContent, Divider, Typography } from '@mui/material'
+import {
+  Card,
+  CardContent,
+  Divider,
+  IconButton,
+  Tooltip,
+  Typography,
+} from '@mui/material'
 import Image from 'next/image'
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { useIsMobile } from '../context/IsMobileProvider'
 import QrCodeIcon from '@mui/icons-material/QrCode'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
@@ -9,9 +16,12 @@ import EventSeatIcon from '@mui/icons-material/EventSeat'
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import SignUpButton from './signUpButton'
-import { DarkModeSwitch } from './darkModeSwitch'
+import { DarkModeSwitch, DTThemedToggle } from './darkModeSwitch'
 import '../styles/landing.css'
 import Header from './header'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { useThemeContext } from '../context/CustomThemeProvider'
 
 type DineTapFeature = {
   title: string
@@ -20,6 +30,8 @@ type DineTapFeature = {
 }
 
 export const Landing = () => {
+  const { theme } = useThemeContext()
+  const [billedAnnually, setBilledAnnually] = useState(false)
   const isMobile = useIsMobile()
 
   if (isMobile === null) {
@@ -64,6 +76,37 @@ export const Landing = () => {
     },
   ]
 
+  const pricingConfig = {
+    pro: {
+      monthly: {
+        normalPrice: '$250',
+        earlyPrice: '$50',
+      },
+      annually: {
+        normalPrice: '$200',
+        earlyPrice: '$40',
+      },
+    },
+    enterprise: {
+      monthly: { normalPrice: '$2,500', earlyPrice: '$500' },
+      annually: { normalPrice: '$2,000', earlyPrice: '$400' },
+    },
+  }
+
+  const proPrice = billedAnnually
+    ? pricingConfig.pro.annually
+    : pricingConfig.pro.monthly
+  const ePrice = billedAnnually
+    ? pricingConfig.enterprise.annually
+    : pricingConfig.enterprise.monthly
+  const billingTerm = billedAnnually ? 'annually' : 'monthly'
+
+  const getPriceString = (price: 'pro' | 'enterprise') => {
+    return `${
+      pricingConfig[price][billingTerm].earlyPrice
+    } / month, billed ${billingTerm}`
+  }
+
   return (
     <>
       <Header />
@@ -94,6 +137,28 @@ export const Landing = () => {
         <Typography variant="h5">
           DineTap is free for all restaurant guests.
         </Typography>
+
+        <div className="spacer"></div>
+
+        <div className="billing-toggle-container">
+          <Typography
+            variant="h6"
+            className={billedAnnually ? 'gray-text' : ''}
+          >
+            Billed monthly
+          </Typography>
+          <DTThemedToggle
+            checked={billedAnnually}
+            onChange={() => setBilledAnnually(!billedAnnually)}
+          />
+          <Typography
+            variant="h6"
+            className={!billedAnnually ? 'gray-text' : ''}
+          >
+            Billed annually
+          </Typography>
+        </div>
+
         <div className="pricing-container">
           <Card className="pricing-card free-card">
             <div className="pricing-card-title">
@@ -134,9 +199,9 @@ export const Landing = () => {
                     color: 'gray',
                   }}
                 >
-                  $250
+                  {`${billedAnnually ? pricingConfig.pro.annually.normalPrice : pricingConfig.pro.monthly.normalPrice}`}
                 </span>
-                $50 / month
+                {getPriceString('pro')}
               </Typography>
               <Typography variant="caption">
                 Early adopter price. Limited time offer, 80% off.
@@ -183,9 +248,9 @@ export const Landing = () => {
                     color: 'gray',
                   }}
                 >
-                  $2,500
+                  {`${billedAnnually ? pricingConfig.enterprise.annually.normalPrice : pricingConfig.enterprise.monthly.normalPrice}`}
                 </span>
-                $500 / month
+                {getPriceString('enterprise')}
               </Typography>
               <Typography variant="caption">
                 Early adopter price. Limited time offer, 80% off.
