@@ -11,7 +11,7 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive'
 import SignUpButton from './signUpButton'
 import { DarkModeSwitch } from './darkModeSwitch'
 
-type DTFeature = {
+type DineTapFeature = {
   title: string
   description: string
   icon: ReactElement<any, any>
@@ -26,40 +26,40 @@ export const Landing = () => {
 
   const logoSize = isMobile ? 60 : 75
 
-  const features: DTFeature[] = [
+  const features: DineTapFeature[] = [
     {
       title: 'QR Code Table Menus',
       description:
-        'Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers. 📱📋',
+        'Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers.',
       icon: <QrCodeIcon sx={{ fontSize: 75, color: '#4CAF50' }} />,
     },
     {
       title: 'Manage Menu Items and Prices',
-      description: 'Easily hide out-of-stock items or update market prices. 💲',
+      description: 'Easily hide out-of-stock items or update market prices.',
       icon: <RestaurantIcon sx={{ fontSize: 75, color: '#FF9800' }} />,
     },
     {
       title: 'Order from Digital Menu',
       description:
-        'Customers can order directly from the digital menu, sending orders straight to the kitchen. This minimizes wait times and reduces order errors. 📲🍽️',
+        'Customers can order directly from the digital menu, sending orders straight to the kitchen. This minimizes wait times and reduces order errors.',
       icon: <LocalMallIcon sx={{ fontSize: 75, color: '#3F51B5' }} />,
     },
     {
       title: 'Table Reservations',
       description:
-        'Manage table configurations and allow customers to reserve tables in advance. Control reservation limits during staff shortages. 🪑📅',
+        'Manage table configurations and allow customers to reserve tables in advance. Control reservation limits during staff shortages.',
       icon: <EventSeatIcon sx={{ fontSize: 75, color: '#E91E63' }} />,
     },
     {
       title: 'Order Ahead',
       description:
-        'Enable customers to order ahead so their food is ready upon arrival. This improves table turnover rates and enhances customer satisfaction. ⏰🍔',
+        'Enable customers to order ahead so their food is ready upon arrival. This improves table turnover rates and enhances customer satisfaction.',
       icon: <FastfoodIcon sx={{ fontSize: 75, color: '#9C27B0' }} />,
     },
     {
       title: 'Call Wait Staff',
       description:
-        'Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction. 🛎️👨‍🍳',
+        'Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction.',
       icon: <NotificationsActiveIcon sx={{ fontSize: 75, color: '#F44336' }} />,
     },
   ]
