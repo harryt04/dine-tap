@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { IsMobileProvider } from './context/IsMobileProvider'
 import ThemeProvider from './context/CustomThemeProvider'
 import { AuthProvider } from './context/AuthContext'
+import TranslationsProvider from './context/TranslationsProvider'
 
 export const metadata: Metadata = {
   title: 'DineTap',
@@ -42,13 +43,15 @@ export default function RootLayout({
       <link rel="manifest" href="/site.webmanifest"></link>
       <html lang="en">
         <AppRouterCacheProvider>
-          <ThemeProvider>
-            <IsMobileProvider>
-              <AuthProvider>
-                <body>{children}</body>
-              </AuthProvider>
-            </IsMobileProvider>
-          </ThemeProvider>
+          <TranslationsProvider>
+            <ThemeProvider>
+              <IsMobileProvider>
+                <AuthProvider>
+                  <body>{children}</body>
+                </AuthProvider>
+              </IsMobileProvider>
+            </ThemeProvider>
+          </TranslationsProvider>
         </AppRouterCacheProvider>
 
         {isProduction && (
