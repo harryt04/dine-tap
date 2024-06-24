@@ -35,15 +35,15 @@ export const Landing = () => {
 
   const features: DineTapFeature[] = [
     {
-      title: 'QR Code Table Menus',
+      title: t('feature1Title'),
       description:
-        'Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers.',
+        t('feature1Description'),
       icon: <QrCodeIcon sx={{ fontSize: 75, color: '#4CAF50' }} />,
     },
     {
-      title: 'Manage Menu Items and Prices',
+      title: t('feature2Title'),
       description:
-        'Easily hide out-of-stock items or update market prices. Keep your menu current without the hassle of explaining unavailable dishes or fluctuating market prices.',
+        t('feature2Description'),
       icon: <RestaurantIcon sx={{ fontSize: 75, color: '#FF9800' }} />,
     },
     {
@@ -172,7 +172,7 @@ export const Landing = () => {
               color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            Billed annually
+            Billed annually (two months free)
           </Typography>
         </div>
 
