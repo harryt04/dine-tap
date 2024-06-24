@@ -1,3 +1,6 @@
 {
-  "test": "This is a test"
+  "feature1Description": "Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers.",
+  "feature1Title": "QR Code Table Menus",
+  "feature2Description": "Easily hide out-of-stock items or update market prices. Keep your menu current without the hassle of explaining unavailable dishes or fluctuating market prices.",
+  "feature2Title": "Manage Menu Items and Prices"
 }
