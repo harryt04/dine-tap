@@ -73,7 +73,7 @@ export const Landing = () => {
       title: 'Call Wait Staff',
       description:
         'Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction.',
-      icon: <NotificationsActiveIcon sx={{ fontSize: 75, color: '#F44336' }} />,
+      icon: <NotificationsActiveIcon sx={{ fontSize: 75, color: '#E53935' }} />,
     },
   ]
 
