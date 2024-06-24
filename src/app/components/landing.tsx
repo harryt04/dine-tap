@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardContent,
-  Divider,
-  IconButton,
-  Tooltip,
-  Typography,
-} from '@mui/material'
-import Image from 'next/image'
+import { Card, CardContent, Divider, Typography } from '@mui/material'
 import React, { ReactElement, useState } from 'react'
 import { useIsMobile } from '../context/IsMobileProvider'
 import QrCodeIcon from '@mui/icons-material/QrCode'
@@ -19,8 +11,6 @@ import SignUpButton from './signUpButton'
 import { DarkModeSwitch, DTThemedToggle } from './darkModeSwitch'
 import '../styles/landing.css'
 import Header from './header'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
 import { useThemeContext } from '../context/CustomThemeProvider'
 
 type DineTapFeature = {
@@ -105,9 +95,24 @@ export const Landing = () => {
   }
 
   const billingTerm = billedAnnually ? 'annually' : 'monthly'
+  const highLightColor =
+    theme.palette.mode === 'dark'
+      ? theme.palette.primary.main
+      : theme.palette.primary.dark
 
-  const getPriceString = (price: 'pro' | 'enterprise') => {
-    return `${pricingConfig[price][billingTerm].earlyPrice}, billed ${billingTerm}`
+  const getPriceJsx = (price: 'pro' | 'enterprise') => {
+    return (
+      <>
+        <span
+          style={{
+            color: highLightColor,
+          }}
+        >
+          {pricingConfig[price][billingTerm].earlyPrice}
+        </span>
+        {`, billed ${billingTerm}`}
+      </>
+    )
   }
 
   return (
@@ -208,12 +213,12 @@ export const Landing = () => {
                 >
                   {`${billedAnnually ? pricingConfig.pro.annually.normalPrice : pricingConfig.pro.monthly.normalPrice}`}
                 </span>
-                {getPriceString('pro')}
+                {getPriceJsx('pro')}
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
                 Early adopter price. Limited time offer, save{' '}
-                <span style={{ color: theme.palette.primary.dark }}>
+                <span style={{ color: highLightColor }}>
                   {pricingConfig.pro[billingTerm].discountPercentage}
                 </span>
                 .
@@ -262,12 +267,12 @@ export const Landing = () => {
                 >
                   {`${billedAnnually ? pricingConfig.enterprise.annually.normalPrice : pricingConfig.enterprise.monthly.normalPrice}`}
                 </span>
-                {getPriceString('enterprise')}
+                {getPriceJsx('enterprise')}
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
                 Early adopter price. Limited time offer, save{' '}
-                <span style={{ color: theme.palette.primary.dark }}>
+                <span style={{ color: highLightColor }}>
                   {pricingConfig.enterprise[billingTerm].discountPercentage}
                 </span>
                 .
