@@ -179,7 +179,7 @@ export const Landing = () => {
             <div className="center">
               <SignUpButton label={t('joinWaitlist')} />
             </div>
-            <div className="spacer"></div>digitalRestaurantMenu
+            <div className="spacer"></div>
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
@@ -212,9 +212,12 @@ export const Landing = () => {
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
-                {t('earlyAdopterPrice', {
-                  percentage: pricingConfig.pro[billingTerm].discountPercentage,
-                })}
+                {t('earlyAdopterPrice')}
+                <span style={{ color: highLightColor }}>
+                  {' '}
+                  {pricingConfig.pro[billingTerm].discountPercentage}
+                </span>
+                .
               </Typography>
               <br />
               <Typography variant="caption">{t('noContract')}</Typography>
@@ -261,10 +264,12 @@ export const Landing = () => {
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
-                {t('earlyAdopterPrice', {
-                  percentage:
-                    pricingConfig.enterprise[billingTerm].discountPercentage,
-                })}
+                {t('earlyAdopterPrice')}
+                <span style={{ color: highLightColor }}>
+                  {' '}
+                  {pricingConfig.enterprise[billingTerm].discountPercentage}
+                </span>
+                .
               </Typography>
               <br />
               <Typography variant="caption">{t('noContract')}</Typography>
