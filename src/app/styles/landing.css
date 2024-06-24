@@ -57,6 +57,10 @@ li {
   place-items: center;
 }
 
+.early-adopter-text {
+  padding-top: 0.5rem;
+}
+
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {

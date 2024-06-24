@@ -25,6 +25,10 @@ const lightTheme = createTheme({
       dark: '#1c54b2',
       contrastText: '#FFF',
     },
+    background: {
+      default: 'whitesmoke',
+      paper: '#FFF',
+    },
   },
 })
 

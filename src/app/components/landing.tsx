@@ -78,29 +78,36 @@ export const Landing = () => {
   ]
 
   const pricingConfig = {
-    discountPercentage: '20%',
     pro: {
       monthly: {
-        normalPrice: '$250',
+        discountPercentage: '50%',
+        normalPrice: '$100',
         earlyPrice: '$50',
       },
       annually: {
-        normalPrice: '$200',
-        earlyPrice: '$40',
+        discountPercentage: '50%',
+        normalPrice: '$1000',
+        earlyPrice: '$500',
       },
     },
     enterprise: {
-      monthly: { normalPrice: '$2,500', earlyPrice: '$500' },
-      annually: { normalPrice: '$2,000', earlyPrice: '$400' },
+      monthly: {
+        discountPercentage: '25%',
+        normalPrice: '$300',
+        earlyPrice: '$225',
+      },
+      annually: {
+        discountPercentage: '25%',
+        normalPrice: '$3,000',
+        earlyPrice: '$2,250',
+      },
     },
   }
 
   const billingTerm = billedAnnually ? 'annually' : 'monthly'
 
   const getPriceString = (price: 'pro' | 'enterprise') => {
-    return `${
-      pricingConfig[price][billingTerm].earlyPrice
-    } / month, billed ${billingTerm}`
+    return `${pricingConfig[price][billingTerm].earlyPrice}, billed ${billingTerm}`
   }
 
   return (
@@ -155,7 +162,7 @@ export const Landing = () => {
               color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            Billed annually (save {pricingConfig.discountPercentage})
+            Billed annually
           </Typography>
         </div>
 
@@ -203,8 +210,13 @@ export const Landing = () => {
                 </span>
                 {getPriceString('pro')}
               </Typography>
-              <Typography variant="caption">
-                Early adopter price. Limited time offer, 80% off.
+              <div className="spacer"></div>
+              <Typography variant="h6">
+                Early adopter price. Limited time offer, save{' '}
+                <span style={{ color: theme.palette.primary.dark }}>
+                  {pricingConfig.pro[billingTerm].discountPercentage}
+                </span>
+                .
               </Typography>
               <br />
               <Typography variant="caption">
@@ -252,8 +264,13 @@ export const Landing = () => {
                 </span>
                 {getPriceString('enterprise')}
               </Typography>
-              <Typography variant="caption">
-                Early adopter price. Limited time offer, 80% off.
+              <div className="spacer"></div>
+              <Typography variant="h6">
+                Early adopter price. Limited time offer, save{' '}
+                <span style={{ color: theme.palette.primary.dark }}>
+                  {pricingConfig.enterprise[billingTerm].discountPercentage}
+                </span>
+                .
               </Typography>
               <br />
               <Typography variant="caption">

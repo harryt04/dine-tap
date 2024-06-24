@@ -10,7 +10,6 @@ export const Footer = () => {
       justifyContent="space-between"
       alignItems="center"
       p={2}
-      bgcolor="background.paper"
     >
       <Typography variant="caption" color="textSecondary" align="center">
         DineTap &copy; 2024
