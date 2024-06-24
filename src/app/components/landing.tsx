@@ -12,6 +12,7 @@ import { DarkModeSwitch, DTThemedToggle } from './darkModeSwitch'
 import '../styles/landing.css'
 import Header from './header'
 import { useThemeContext } from '../context/CustomThemeProvider'
+import { useTranslation } from 'react-i18next'
 
 type DineTapFeature = {
   title: string
@@ -20,9 +21,13 @@ type DineTapFeature = {
 }
 
 export const Landing = () => {
+  const { t } = useTranslation()
   const { theme } = useThemeContext()
   const [billedAnnually, setBilledAnnually] = useState(false)
   const isMobile = useIsMobile()
+
+  const test = t('test')
+  console.log('test: ', test)
 
   if (isMobile === null) {
     return null
