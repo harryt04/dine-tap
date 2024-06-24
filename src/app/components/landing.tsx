@@ -26,9 +26,6 @@ export const Landing = () => {
   const [billedAnnually, setBilledAnnually] = useState(false)
   const isMobile = useIsMobile()
 
-  const test = t('test')
-  console.log('test: ', test)
-
   if (isMobile === null) {
     return null
   }
@@ -109,7 +106,7 @@ export const Landing = () => {
         >
           {pricingConfig[price][billingTerm].earlyPrice}
         </span>
-        {`, ${t('billed')} ${billingTerm}`}
+        {t('pricingCardTotalPrice', { billingTerm: billingTerm })}
       </>
     )
   }
@@ -143,9 +140,7 @@ export const Landing = () => {
         </Typography>
 
         <div className="spacer"></div>
-        <Typography variant="h5">
-          {t('DineTap is free for all restaurant guests.')}
-        </Typography>
+        <Typography variant="h5">{t('freeForAllGuests')}</Typography>
 
         <div className="spacer"></div>
 
@@ -156,7 +151,7 @@ export const Landing = () => {
               color: billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            {t('Billed monthly')}
+            {t('billedMonthly')}
           </Typography>
           <DTThemedToggle
             checked={billedAnnually}
@@ -168,7 +163,7 @@ export const Landing = () => {
               color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            {t('Billed annually (two months free)')}
+            {t('billedAnnually')}
           </Typography>
         </div>
 
@@ -184,17 +179,17 @@ export const Landing = () => {
             <div className="center">
               <SignUpButton label={t('joinWaitlist')} />
             </div>
-            <div className="spacer"></div>
+            <div className="spacer"></div>digitalRestaurantMenu
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
                 <li>🏠 1 restaurant/location</li>
                 <li>👤 1 admin user</li>
-                <li>{t('Front house features:')}</li>
+                <li>{t('frontHouseFeatures')}</li>
                 <ul>
-                  <li>📋 {t('Digital restaurant menu')}</li>
-                  <li>📱 {t('QR code table menu')}</li>
-                  <li>🛎️ {t('Call waiter')}</li>
+                  <li>📋 {t('digitalRestaurantMenu')}</li>
+                  <li>📱 {t('qrCodeTableMenu')}</li>
+                  <li>🛎️ {t('callWaitStaff')}</li>
                 </ul>
               </ul>
             </CardContent>
@@ -235,7 +230,7 @@ export const Landing = () => {
                 <li>🏠 {t('proTierLocations')}</li>
                 <li>👤 {t('proTierAdmins')}</li>
                 <li>
-                  {t('proTierFrontHouse')} <br />
+                  {t('frontHouseFeatures')} <br />
                   {t('proTierFrontHouseFeatures')}
                 </li>
                 <ul>
@@ -281,7 +276,7 @@ export const Landing = () => {
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>All the features of the Pro tier plus:</li>
+                <li>{t('enterpriseTierFeatures')}</li>
                 <li>🏠 {t('enterpriseTierLocations')}</li>
                 <li>👤 {t('enterpriseTierAdmins')}</li>
               </ul>

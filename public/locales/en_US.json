@@ -1,4 +1,8 @@
 {
+  "billedAnnually": "Billed annually (two months free)",
+  "billedMonthly": "Billed monthly",
+  "callWaitStaff": "Call wait staff",
+  "digitalRestaurantMenu": "Digital restaurant menu",
   "earlyAdopterPrice": "Early adopter price. Limited time offer, save {{percentage}}.",
   "enterpriseTierAdmins": "Unlimited admin users",
   "enterpriseTierFeatures": "All the features of the Pro tier plus:",
@@ -16,16 +20,18 @@
   "feature5Title": "Order Ahead",
   "feature6Description": "Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction.",
   "feature6Title": "Call Wait Staff",
+  "freeForAllGuests": "DineTap is free for all restaurant guests.",
   "freeTierDescription": "Ideal for small venues or food trucks. Kitchen features not included.",
   "freeTierPrice": "$0",
   "freeTierTitle": "Free - Coming Soon",
+  "frontHouseFeatures": "Front house features",
   "joinWaitlist": "Join Waitlist",
   "landingTitle": "Digital restaurant menus as a service for the digital age.",
   "noContract": "All plans have no minimum contract length and can be canceled at any time.",
+  "pricingCardTotalPrice": ", billed {{billingTerm}}",
   "pricingTitle": "Pricing",
   "proTierAdmins": "Up to 3 admin users per location",
   "proTierDigitalMenuOrders": "Take orders from the digital menu",
-  "proTierFrontHouse": "Front house features",
   "proTierFrontHouseFeatures": "All Free tier features plus:",
   "proTierLocations": "Up to 5 restaurants/locations",
   "proTierOrdersAhead": "Orders ahead of reservation time",
@@ -33,5 +39,6 @@
   "proTierReservations": "Table reservations",
   "proTierSupport": "Phone, email, and chat customer support",
   "proTierTables": "Unlimited tables per location",
-  "proTierTitle": "Pro - Coming Soon"
+  "proTierTitle": "Pro - Coming Soon",
+  "qrCodeTableMenu": "QR code table menus"
 }
