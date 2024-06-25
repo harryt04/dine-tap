@@ -183,8 +183,8 @@ export const Landing = () => {
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>🏠 1 restaurant/location</li>
-                <li>👤 1 admin user</li>
+                <li>🏠 {t('freeFeature1')}</li>
+                <li>👤 {t('freeFeature2')}</li>
                 <li>{t('frontHouseFeatures')}</li>
                 <ul>
                   <li>📋 {t('digitalRestaurantMenu')}</li>

@@ -20,6 +20,8 @@
   "feature5Title": "Order Ahead",
   "feature6Description": "Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction.",
   "feature6Title": "Call Wait Staff",
+  "freeFeature1": "1 restaurant/location",
+  "freeFeature2": "1 admin user",
   "freeForAllGuests": "DineTap is free for all restaurant guests.",
   "freeTierDescription": "Ideal for small venues or food trucks. Kitchen features not included.",
   "freeTierPrice": "$0",
