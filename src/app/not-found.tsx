@@ -10,8 +10,8 @@ const NotFound = () => {
       <div className="center">
         <h1>404 - Page Not Found</h1>
         <p>
-          The page you're trying to reach isn't available at this URL. Please
-          check the URL for errors and try again.
+          {`The page you're trying to reach isn't available at this URL. Please
+          check the URL for errors and try again.`}
         </p>
       </div>
     </>
