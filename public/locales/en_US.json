@@ -26,6 +26,7 @@
   "freeTierTitle": "Free - Coming Soon",
   "frontHouseFeatures": "Front house features",
   "joinWaitlist": "Join Waitlist",
+  "joinWaitlistLock": "Join waitlist to lock in this price",
   "landingTitle": "Digital restaurant menus as a service for the digital age.",
   "noContract": "All plans have no minimum contract length and can be canceled at any time.",
   "pricingCardTotalPrice": ", billed {{billingTerm}}",
