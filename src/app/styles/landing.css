@@ -1,12 +1,12 @@
 .feature-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-top: 2rem;
   padding-bottom: 2rem;
   column-gap: 2rem;
   row-gap: 2rem;
   text-align: left;
-  max-width: 85rem;
+  max-width: 90rem;
 }
 
 .feature {
@@ -25,7 +25,7 @@
 
 .pricing-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 6fr 7fr 7fr;
   column-gap: 2rem;
   row-gap: 2rem;
   padding: 2rem;
@@ -64,16 +64,15 @@ li {
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   .pricing-container {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   .free-card {
     grid-column: span 2;
-    min-width: 33vw;
     justify-self: center;
   }
 }
