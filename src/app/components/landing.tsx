@@ -223,7 +223,7 @@ export const Landing = () => {
               <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="center">
-              <SignUpButton label={t('joinWaitlist')} />
+              <SignUpButton label={t('joinWaitlistLock')} />
             </div>
             <div className="spacer"></div>
             <Divider />
@@ -275,7 +275,7 @@ export const Landing = () => {
               <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="center">
-              <SignUpButton label={t('joinWaitlist')} />
+              <SignUpButton label={t('joinWaitlistLock')} />
             </div>
             <div className="spacer"></div>
             <Divider />
