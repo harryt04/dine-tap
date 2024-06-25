@@ -219,11 +219,11 @@ export const Landing = () => {
                 </span>
                 .
               </Typography>
-              <br />
-              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="center">
               <SignUpButton label={t('joinWaitlistLock')} />
+              <br />
+              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="spacer"></div>
             <Divider />
@@ -239,6 +239,7 @@ export const Landing = () => {
                 <ul>
                   <li>📱 {t('proTierDigitalMenuOrders')}</li>
                   <li>💳 {t('proTierPayments')}</li>
+                  <li style={{ color: highLightColor }}>{t('flatRate')}</li>
                   <li>📅 {t('proTierReservations')}</li>
                   <li>🪑 {t('proTierTables')}</li>
                   <li>⏰ {t('proTierOrdersAhead')}</li>
@@ -271,11 +272,11 @@ export const Landing = () => {
                 </span>
                 .
               </Typography>
-              <br />
-              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="center">
               <SignUpButton label={t('joinWaitlistLock')} />
+              <br />
+              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="spacer"></div>
             <Divider />

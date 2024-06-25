@@ -25,16 +25,15 @@
 
 .pricing-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   column-gap: 2rem;
   row-gap: 2rem;
-  padding-top: 2rem;
+  padding: 2rem;
 }
 
 .pricing-card {
   min-width: 20vw;
-  padding: 1rem;
-  padding-top: 3rem;
+  padding: 2rem;
   text-align: left;
   line-height: 1.75rem;
 }
@@ -83,6 +82,8 @@ li {
 @media (max-width: 900px) {
   .pricing-container {
     grid-template-columns: 1fr;
+    padding: 2rem 0;
+    max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
   .free-card {
     grid-column: 1;
