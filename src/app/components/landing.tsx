@@ -221,7 +221,7 @@ export const Landing = () => {
               </Typography>
             </div>
             <div className="center">
-              <SignUpButton label={t('joinWaitlistLock')} />
+              <SignUpButton label={t('reserveThisPrice')} />
               <br />
               <Typography variant="caption">{t('noContract')}</Typography>
             </div>
@@ -274,7 +274,7 @@ export const Landing = () => {
               </Typography>
             </div>
             <div className="center">
-              <SignUpButton label={t('joinWaitlistLock')} />
+              <SignUpButton label={t('reserveThisPrice')} />
               <br />
               <Typography variant="caption">{t('noContract')}</Typography>
             </div>
