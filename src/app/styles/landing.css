@@ -1,12 +1,12 @@
 .feature-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   padding-top: 2rem;
   padding-bottom: 2rem;
   column-gap: 2rem;
   row-gap: 2rem;
   text-align: left;
-  max-width: 85rem;
+  max-width: 90rem;
 }
 
 .feature {
@@ -25,15 +25,15 @@
 
 .pricing-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 6fr 7fr 7fr;
   column-gap: 2rem;
   row-gap: 2rem;
-  padding-top: 2rem;
+  padding: 2rem;
 }
 
 .pricing-card {
   min-width: 20vw;
-  padding: 1rem;
+  padding: 2rem;
   text-align: left;
   line-height: 1.75rem;
 }
@@ -64,16 +64,15 @@ li {
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   .pricing-container {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
 
   .free-card {
     grid-column: span 2;
-    min-width: 33vw;
     justify-self: center;
   }
 }
@@ -82,6 +81,8 @@ li {
 @media (max-width: 900px) {
   .pricing-container {
     grid-template-columns: 1fr;
+    padding: 2rem 0;
+    max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
   .free-card {
     grid-column: 1;

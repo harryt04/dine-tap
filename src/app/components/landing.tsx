@@ -12,6 +12,7 @@ import { DarkModeSwitch, DTThemedToggle } from './darkModeSwitch'
 import '../styles/landing.css'
 import Header from './header'
 import { useThemeContext } from '../context/CustomThemeProvider'
+import { useTranslation } from 'react-i18next'
 
 type DineTapFeature = {
   title: string
@@ -20,6 +21,7 @@ type DineTapFeature = {
 }
 
 export const Landing = () => {
+  const { t } = useTranslation()
   const { theme } = useThemeContext()
   const [billedAnnually, setBilledAnnually] = useState(false)
   const isMobile = useIsMobile()
@@ -30,39 +32,33 @@ export const Landing = () => {
 
   const features: DineTapFeature[] = [
     {
-      title: 'QR Code Table Menus',
-      description:
-        'Generate a QR code for each table, allowing customers to view the menu on their phones. No need to print menus for changes, and no more concerns about sanitizing menus between customers.',
+      title: t('feature1Title'),
+      description: t('feature1Description'),
       icon: <QrCodeIcon sx={{ fontSize: 75, color: '#4CAF50' }} />,
     },
     {
-      title: 'Manage Menu Items and Prices',
-      description:
-        'Easily hide out-of-stock items or update market prices. Keep your menu current without the hassle of explaining unavailable dishes or fluctuating market prices.',
+      title: t('feature2Title'),
+      description: t('feature2Description'),
       icon: <RestaurantIcon sx={{ fontSize: 75, color: '#FF9800' }} />,
     },
     {
-      title: 'Order from Digital Menu',
-      description:
-        'Customers can order directly from the digital menu, sending orders straight to the kitchen. This minimizes wait times and reduces order errors.',
+      title: t('feature3Title'),
+      description: t('feature3Description'),
       icon: <LocalMallIcon sx={{ fontSize: 75, color: '#3F51B5' }} />,
     },
     {
-      title: 'Table Reservations',
-      description:
-        'Manage table configurations and allow customers to reserve tables in advance. Control reservation limits during staff shortages.',
+      title: t('feature4Title'),
+      description: t('feature4Description'),
       icon: <EventSeatIcon sx={{ fontSize: 75, color: '#E91E63' }} />,
     },
     {
-      title: 'Order Ahead',
-      description:
-        'Enable customers to order ahead so their food is ready upon arrival. This improves table turnover rates and enhances customer satisfaction. You can collect payment up front or at the end of their visit.',
+      title: t('feature5Title'),
+      description: t('feature5Description'),
       icon: <FastfoodIcon sx={{ fontSize: 75, color: '#9C27B0' }} />,
     },
     {
-      title: 'Call Wait Staff',
-      description:
-        'Allow customers to digitally call a waiter to their table, enhancing efficiency and customer satisfaction.',
+      title: t('feature6Title'),
+      description: t('feature6Description'),
       icon: <NotificationsActiveIcon sx={{ fontSize: 75, color: '#E53935' }} />,
     },
   ]
@@ -110,7 +106,7 @@ export const Landing = () => {
         >
           {pricingConfig[price][billingTerm].earlyPrice}
         </span>
-        {`, billed ${billingTerm}`}
+        {t('pricingCardTotalPrice', { billingTerm: billingTerm })}
       </>
     )
   }
@@ -122,7 +118,7 @@ export const Landing = () => {
       <div className="center landing-content">
         <DarkModeSwitch />
         <Typography variant={isMobile ? 'h5' : 'h4'}>
-          Digital restaurant menus as a service for the digital age.
+          {t('landingTitle')}
         </Typography>
 
         <div className="spacer"></div>
@@ -139,12 +135,12 @@ export const Landing = () => {
         </div>
 
         <div className="spacer"></div>
-        <Typography variant={isMobile ? 'h3' : 'h2'}>Pricing</Typography>
+        <Typography variant={isMobile ? 'h3' : 'h2'}>
+          {t('pricingTitle')}
+        </Typography>
 
         <div className="spacer"></div>
-        <Typography variant="h5">
-          DineTap is free for all restaurant guests.
-        </Typography>
+        <Typography variant="h5">{t('freeForAllGuests')}</Typography>
 
         <div className="spacer"></div>
 
@@ -155,7 +151,7 @@ export const Landing = () => {
               color: billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            Billed monthly
+            {t('billedMonthly')}
           </Typography>
           <DTThemedToggle
             checked={billedAnnually}
@@ -167,34 +163,33 @@ export const Landing = () => {
               color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
             }}
           >
-            Billed annually
+            {t('billedAnnually')}
           </Typography>
         </div>
 
         <div className="pricing-container">
           <Card className="pricing-card free-card">
             <div className="pricing-card-title">
-              <Typography variant="h4">Free - Coming Soon</Typography>
-              <Typography variant="h5">$0</Typography>
+              <Typography variant="h4">{t('freeTierTitle')}</Typography>
+              <Typography variant="h5">{t('freeTierPrice')}</Typography>
               <Typography variant="caption">
-                Ideal for small venues or food trucks. Kitchen features not
-                included.
+                {t('freeTierDescription')}
               </Typography>
             </div>
             <div className="center">
-              <SignUpButton label="Join Waitlist" />
+              <SignUpButton label={t('joinWaitlist')} />
             </div>
             <div className="spacer"></div>
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>🏠 1 restaurant/location</li>
-                <li>👤 1 admin user</li>
-                <li>Front house features:</li>
+                <li>🏠 {t('freeFeature1')}</li>
+                <li>👤 {t('freeFeature2')}</li>
+                <li>{t('frontHouseFeatures')}</li>
                 <ul>
-                  <li>📋 Digital restaurant menu</li>
-                  <li>📱 QR code table menu</li>
-                  <li>🛎️ Call waiter</li>
+                  <li>📋 {t('digitalRestaurantMenu')}</li>
+                  <li>📱 {t('qrCodeTableMenu')}</li>
+                  <li>🛎️ {t('callWaitStaff')}</li>
                 </ul>
               </ul>
             </CardContent>
@@ -202,7 +197,7 @@ export const Landing = () => {
 
           <Card className="pricing-card">
             <div className="pricing-card-title">
-              <Typography variant="h4">Pro - Coming Soon</Typography>
+              <Typography variant="h4">{t('proTierTitle')}</Typography>
               <Typography variant="h5">
                 <span
                   style={{
@@ -217,38 +212,37 @@ export const Landing = () => {
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
-                Early adopter price. Limited time offer, save{' '}
+                {t('earlyAdopterPrice')}
                 <span style={{ color: highLightColor }}>
+                  {' '}
                   {pricingConfig.pro[billingTerm].discountPercentage}
                 </span>
                 .
               </Typography>
-              <br />
-              <Typography variant="caption">
-                All plans have no minimum contract length and can be canceled at
-                any time.
-              </Typography>
             </div>
             <div className="center">
-              <SignUpButton label="Join Waitlist" />
+              <SignUpButton label={t('reserveThisPrice')} />
+              <br />
+              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="spacer"></div>
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>📞 Phone, email, and chat customer support</li>
-                <li>🏠 Up to 5 restaurants/locations</li>
-                <li>👤 Up to 3 admin users per location</li>
+                <li>📞 {t('proTierSupport')}</li>
+                <li>🏠 {t('proTierLocations')}</li>
+                <li>👤 {t('proTierAdmins')}</li>
                 <li>
-                  Front house features <br />
-                  All Free tier features plus:
+                  {t('frontHouseFeatures')} <br />
+                  {t('proTierFrontHouseFeatures')}
                 </li>
                 <ul>
-                  <li>📱 Take orders from the digital menu</li>
-                  <li>💳 Option to accept payments via DineTap</li>
-                  <li>📅 Table reservations</li>
-                  <li>🪑 Unlimited tables per location</li>
-                  <li>⏰ Orders ahead of reservation time</li>
+                  <li>📱 {t('proTierDigitalMenuOrders')}</li>
+                  <li>💳 {t('proTierPayments')}</li>
+                  <li style={{ color: highLightColor }}>{t('flatRate')}</li>
+                  <li>📅 {t('proTierReservations')}</li>
+                  <li>🪑 {t('proTierTables')}</li>
+                  <li>⏰ {t('proTierOrdersAhead')}</li>
                 </ul>
               </ul>
             </CardContent>
@@ -256,7 +250,7 @@ export const Landing = () => {
 
           <Card className="pricing-card">
             <div className="pricing-card-title">
-              <Typography variant="h4">Enterprise - Coming Soon</Typography>
+              <Typography variant="h4">{t('enterpriseTierTitle')}</Typography>
               <Typography variant="h5">
                 <span
                   style={{
@@ -271,28 +265,26 @@ export const Landing = () => {
               </Typography>
               <div className="spacer"></div>
               <Typography variant="h6">
-                Early adopter price. Limited time offer, save{' '}
+                {t('earlyAdopterPrice')}
                 <span style={{ color: highLightColor }}>
+                  {' '}
                   {pricingConfig.enterprise[billingTerm].discountPercentage}
                 </span>
                 .
               </Typography>
-              <br />
-              <Typography variant="caption">
-                All plans have no minimum contract length and can be canceled at
-                any time.
-              </Typography>
             </div>
             <div className="center">
-              <SignUpButton label="Join Waitlist" />
+              <SignUpButton label={t('reserveThisPrice')} />
+              <br />
+              <Typography variant="caption">{t('noContract')}</Typography>
             </div>
             <div className="spacer"></div>
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>
-                <li>All the features of the Pro tier plus:</li>
-                <li>🏠 Unlimited restaurants/locations</li>
-                <li>👤 Unlimited admin users</li>
+                <li>{t('enterpriseTierFeatures')}</li>
+                <li>🏠 {t('enterpriseTierLocations')}</li>
+                <li>👤 {t('enterpriseTierAdmins')}</li>
               </ul>
             </CardContent>
           </Card>
