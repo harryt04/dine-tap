@@ -1,5 +1,5 @@
 {
-  "billedAnnually": "Billed annually (two months free)",
+  "billedAnnually": "Billed annually",
   "billedMonthly": "Billed monthly",
   "callWaitStaff": "Call wait staff",
   "digitalRestaurantMenu": "Digital restaurant menu",
@@ -24,7 +24,7 @@
   "freeFeature1": "1 restaurant/location",
   "freeFeature2": "1 admin user",
   "freeForAllGuests": "DineTap is free for all restaurant guests.",
-  "freeTierDescription": "Ideal for small venues or food trucks. Kitchen features not included.",
+  "freeTierDescription": "Ideal for small venues or food trucks.",
   "freeTierPrice": "$0",
   "freeTierTitle": "Free - Coming Soon",
   "frontHouseFeatures": "Front house features",
@@ -44,5 +44,6 @@
   "proTierTables": "Unlimited tables per location",
   "proTierTitle": "Pro - Coming Soon",
   "qrCodeTableMenu": "QR code table menus",
-  "reserveThisPrice": "Reserve This Price"
+  "reserveThisPrice": "Reserve This Price",
+  "twoMonthsFree": "(two months free)"
 }
