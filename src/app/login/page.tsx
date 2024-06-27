@@ -3,10 +3,11 @@ import React from 'react'
 import { Container, Card, CardContent, Button, Typography } from '@mui/material'
 import { useAuth } from '../context/AuthContext'
 import Image from 'next/image'
-import GoogleIcon from '@mui/icons-material/Google'
 import Header from '../components/header'
 import '../styles/login.css'
 import { useRouter } from 'next/navigation'
+import { DarkModeSwitch } from '../components/darkModeSwitch'
+import CustomGoogleIcon from '../components/googleIcon'
 
 const Login: React.FC = () => {
   const router = useRouter()
@@ -15,6 +16,7 @@ const Login: React.FC = () => {
   if (!user || !user.uid) {
     return (
       <Container maxWidth="sm">
+        <DarkModeSwitch />
         <Header />
         <div className="spacer"></div>
         <Card>
@@ -25,9 +27,11 @@ const Login: React.FC = () => {
               </Typography>
               <Button
                 variant="outlined"
-                color="error"
-                onClick={() => signInWithGoogle('/')}
-                startIcon={<GoogleIcon />}
+                color="inherit"
+                size="large"
+                onClick={() => signInWithGoogle()}
+                // onClick={() => signInWithGoogle('/')}
+                startIcon={<CustomGoogleIcon size={'1.5rem'} />}
               >
                 Sign in with Google
               </Button>
