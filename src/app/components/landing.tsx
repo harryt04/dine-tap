@@ -196,6 +196,9 @@ export const Landing = () => {
             </div>
             <div className="center">
               <SignUpButton label={t('joinWaitlist')} />
+              <Typography variant="caption" sx={{ paddingTop: '1.5rem' }}>
+                {t('riskFree')}
+              </Typography>
             </div>
             <div className="free-spacer"></div>
             <Divider />
@@ -209,6 +212,7 @@ export const Landing = () => {
                   <li>🎨 {t('flexibleMenus')}</li>
                   <li>📱 {t('qrCodeTableMenu')}</li>
                   <li>🛎️ {t('callWaitStaff')}</li>
+                  <li>🪑 {t('freeTierTables')}</li>
                 </ul>
               </ul>
             </CardContent>

@@ -27,6 +27,7 @@
   "freeForAllGuests": "DineTap is free for all restaurant guests.",
   "freeTierDescription": "Ideal for small venues or food trucks.",
   "freeTierPrice": "$0",
+  "freeTierTables": "Up to 10 tables",
   "freeTierTitle": "Free - Coming Soon",
   "frontHouseFeatures": "Front house features",
   "joinWaitlist": "Join Waitlist",
@@ -46,5 +47,6 @@
   "proTierTitle": "Pro - Coming Soon",
   "qrCodeTableMenu": "QR code table menus",
   "reserveThisPrice": "Reserve This Price",
+  "riskFree": "Try it out risk free.",
   "twoMonthsFree": "(two months free)"
 }
