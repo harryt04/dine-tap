@@ -39,13 +39,19 @@ export const DarkModeSwitch = () => {
             : 'Switch to Dark Mode'
         }
       >
-        <IconButton onClick={toggleDarkMode} color="inherit">
-          {theme.palette.mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
-        </IconButton>
-        <DTThemedToggle
-          checked={theme.palette.mode === 'dark'}
-          onChange={toggleDarkMode}
-        />
+        <>
+          <IconButton onClick={toggleDarkMode} color="inherit">
+            {theme.palette.mode === 'dark' ? (
+              <DarkModeIcon />
+            ) : (
+              <LightModeIcon />
+            )}
+          </IconButton>
+          <DTThemedToggle
+            checked={theme.palette.mode === 'dark'}
+            onChange={toggleDarkMode}
+          />
+        </>
       </Tooltip>
     </Box>
   )
