@@ -127,8 +127,12 @@ export const Landing = () => {
             <Card className="feature" key={feature.title}>
               {feature.icon}
               <div>
-                <Typography variant="h5">{feature.title}</Typography>
-                <Typography variant="body1">{feature.description}</Typography>
+                <Typography variant="h5" className="feature-title">
+                  {feature.title}
+                </Typography>
+                <Typography variant={isMobile ? 'body2' : 'body1'}>
+                  {feature.description}
+                </Typography>
               </div>
             </Card>
           ))}

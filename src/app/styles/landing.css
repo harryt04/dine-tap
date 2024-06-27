@@ -71,6 +71,10 @@ li {
   place-items: center;
 }
 
+.feature-title {
+  padding-bottom: 0.5rem;
+}
+
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {
@@ -112,5 +116,13 @@ li {
 
   .billing-toggle-container {
     place-items: start;
+  }
+
+  .feature {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    row-gap: 1rem;
+    padding: 1rem;
   }
 }
