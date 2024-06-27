@@ -17,8 +17,7 @@
 }
 
 .landing-content {
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 3rem;
   max-width: 100vw;
   text-align: center;
 }
@@ -61,6 +60,17 @@ li {
   padding-top: 0.5rem;
 }
 
+.free-spacer {
+  padding-top: 5rem;
+}
+
+.billed-annually-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  place-items: center;
+}
+
 /* if viewing on tablet screen */
 @media (max-width: 1200px) {
   .feature-grid {
@@ -94,5 +104,13 @@ li {
 @media (max-width: 768px) {
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .billed-annually-container {
+    grid-template-columns: 1fr;
+  }
+
+  .billing-toggle-container {
+    place-items: start;
   }
 }

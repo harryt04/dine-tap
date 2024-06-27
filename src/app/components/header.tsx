@@ -18,7 +18,7 @@ const Header = () => {
           alt="logo"
           className="logo"
         />
-        <Typography variant={isMobile ? 'h3' : 'h2'}>DineTap</Typography>
+        <Typography variant={isMobile ? 'h2' : 'h1'}>DineTap</Typography>
       </div>
     </>
   )

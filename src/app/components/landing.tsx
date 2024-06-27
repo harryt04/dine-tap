@@ -113,11 +113,11 @@ export const Landing = () => {
 
   return (
     <>
+      <DarkModeSwitch />
       <Header />
 
       <div className="center landing-content">
-        <DarkModeSwitch />
-        <Typography variant={isMobile ? 'h5' : 'h4'}>
+        <Typography variant={isMobile ? 'h6' : 'h3'} className="landing-title">
           {t('landingTitle')}
         </Typography>
 
@@ -157,14 +157,29 @@ export const Landing = () => {
             checked={billedAnnually}
             onChange={() => setBilledAnnually(!billedAnnually)}
           />
-          <Typography
-            variant="h6"
-            style={{
-              color: !billedAnnually ? theme.palette.text.disabled : 'inherit',
-            }}
-          >
-            {t('billedAnnually')}
-          </Typography>
+          <div className="billed-annually-container">
+            <Typography
+              variant="h6"
+              style={{
+                color: !billedAnnually
+                  ? theme.palette.text.disabled
+                  : 'inherit',
+              }}
+            >
+              {t('billedAnnually')}
+            </Typography>
+
+            <Typography
+              variant={isMobile ? 'caption' : 'body1'}
+              style={{
+                color: !billedAnnually
+                  ? theme.palette.text.disabled
+                  : 'inherit',
+              }}
+            >
+              {t('twoMonthsFree')}
+            </Typography>
+          </div>
         </div>
 
         <div className="pricing-container">
@@ -172,14 +187,13 @@ export const Landing = () => {
             <div className="pricing-card-title">
               <Typography variant="h4">{t('freeTierTitle')}</Typography>
               <Typography variant="h5">{t('freeTierPrice')}</Typography>
-              <Typography variant="caption">
-                {t('freeTierDescription')}
-              </Typography>
+              <div className="spacer"></div>
+              <Typography variant="h6">{t('freeTierDescription')}</Typography>
             </div>
             <div className="center">
               <SignUpButton label={t('joinWaitlist')} />
             </div>
-            <div className="spacer"></div>
+            <div className="free-spacer"></div>
             <Divider />
             <CardContent style={{ paddingBottom: 0 }}>
               <ul>

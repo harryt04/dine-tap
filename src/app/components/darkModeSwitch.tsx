@@ -26,7 +26,12 @@ export const DTThemedToggle = styled(Switch)(({ theme }) => ({
 export const DarkModeSwitch = () => {
   const { theme, toggleDarkMode } = useThemeContext()
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" padding={2}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      sx={{ paddingTop: '2rem' }}
+    >
       <Tooltip
         title={
           theme.palette.mode === 'dark'
