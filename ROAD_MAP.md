@@ -9,7 +9,6 @@
    - Time to Cook
    - Cooking Stages
    - Remove Items (Temporarily/Permanently)
-1. Table Availability Control
 1. Table Designation and Management
 1. Check-in to the Restaurant
    - First come first served

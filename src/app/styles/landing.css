@@ -24,15 +24,15 @@
 
 .pricing-container {
   display: grid;
-  grid-template-columns: 6fr 7fr 7fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2rem;
   row-gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .pricing-card {
   min-width: 20vw;
-  padding: 2rem;
+  padding: 2rem 0;
   text-align: left;
   line-height: 1.75rem;
 }
@@ -47,7 +47,8 @@ ul {
 }
 
 li {
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
 }
 
 .billing-toggle-container {

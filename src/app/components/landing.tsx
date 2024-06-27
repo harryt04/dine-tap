@@ -206,6 +206,7 @@ export const Landing = () => {
                 <li>{t('frontHouseFeatures')}</li>
                 <ul>
                   <li>📋 {t('digitalRestaurantMenu')}</li>
+                  <li>🎨 {t('flexibleMenus')}</li>
                   <li>📱 {t('qrCodeTableMenu')}</li>
                   <li>🛎️ {t('callWaitStaff')}</li>
                 </ul>
