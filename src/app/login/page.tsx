@@ -44,6 +44,7 @@ const Login: React.FC = () => {
 
   return (
     <>
+      <DarkModeSwitch />
       <Header />
       <div className="spacer"></div>
       <Container maxWidth="sm">
