@@ -39,7 +39,7 @@
 
 .pricing-card-title {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 ul {
@@ -83,32 +83,35 @@ li {
   }
 
   .pricing-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .free-card {
-    grid-column: span 2;
-    justify-self: center;
-  }
-}
-
-/* if using small screen */
-@media (max-width: 900px) {
-  .pricing-container {
     grid-template-columns: 1fr;
     padding: 2rem 0;
     max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
-  .free-card {
-    grid-column: 1;
-    min-width: 100%;
+
+  .pricing-card {
+    padding: 2rem 0;
+  }
+
+  .center {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
   }
 }
+
+/* if using small screen */
+/* @media (max-width: 900px) {
+
+} */
 
 /* if using phone screen */
 @media (max-width: 768px) {
   .feature-grid {
     grid-template-columns: 1fr;
+    max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
 
   .billed-annually-container {
