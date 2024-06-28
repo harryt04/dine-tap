@@ -100,6 +100,16 @@ li {
   .feature-card {
     padding: 1rem;
   }
+
+  .enterprise-card {
+    grid-row: 1;
+  }
+  .pro-card {
+    grid-row: 2;
+  }
+  .free-card {
+    grid-row: 3;
+  }
 }
 
 /* if using small screen */
