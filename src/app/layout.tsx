@@ -8,6 +8,7 @@ import { IsMobileProvider } from './context/IsMobileProvider'
 import ThemeProvider from './context/CustomThemeProvider'
 import { AuthProvider } from './context/AuthContext'
 import TranslationsProvider from './context/TranslationsProvider'
+import { FeatureFlagsProvider } from './context/FeatureFlagsProvider'
 
 export const metadata: Metadata = {
   title: 'DineTap',
@@ -43,15 +44,17 @@ export default function RootLayout({
       <link rel="manifest" href="/site.webmanifest"></link>
       <html lang="en">
         <AppRouterCacheProvider>
-          <TranslationsProvider>
-            <ThemeProvider>
-              <IsMobileProvider>
-                <AuthProvider>
-                  <body>{children}</body>
-                </AuthProvider>
-              </IsMobileProvider>
-            </ThemeProvider>
-          </TranslationsProvider>
+          <FeatureFlagsProvider>
+            <TranslationsProvider>
+              <ThemeProvider>
+                <IsMobileProvider>
+                  <AuthProvider>
+                    <body>{children}</body>
+                  </AuthProvider>
+                </IsMobileProvider>
+              </ThemeProvider>
+            </TranslationsProvider>
+          </FeatureFlagsProvider>
         </AppRouterCacheProvider>
 
         {isProduction && (
