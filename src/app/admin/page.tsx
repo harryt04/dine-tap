@@ -5,6 +5,7 @@ import { Typography } from '@mui/material'
 import SignUpButton from '../components/signUpButton'
 import { useAuth } from '../context/AuthContext'
 import { useFeatureFlags } from '../context/FeatureFlagsProvider'
+import PersistentDrawerLeft from '../components/navigation'
 
 const Admin = () => {
   const { userLoading } = useAuth()
@@ -39,7 +40,7 @@ const Admin = () => {
 
   return (
     <>
-      <Typography variant="h4">admin page lol</Typography>
+      <PersistentDrawerLeft />
     </>
   )
 }
