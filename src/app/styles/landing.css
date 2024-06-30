@@ -32,14 +32,14 @@
 
 .pricing-card {
   min-width: 20vw;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   text-align: left;
   line-height: 1.75rem;
 }
 
 .pricing-card-title {
   text-align: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 ul {
@@ -62,7 +62,7 @@ li {
 }
 
 .free-spacer {
-  padding-top: 3.25rem;
+  padding-top: 2.25rem;
 }
 
 .billed-annually-container {
@@ -83,32 +83,45 @@ li {
   }
 
   .pricing-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .free-card {
-    grid-column: span 2;
-    justify-self: center;
-  }
-}
-
-/* if using small screen */
-@media (max-width: 900px) {
-  .pricing-container {
     grid-template-columns: 1fr;
     padding: 2rem 0;
     max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
+
+  .pricing-card {
+    padding: 2rem 0;
+  }
+
+  .center {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .enterprise-card {
+    grid-row: 1;
+  }
+  .pro-card {
+    grid-row: 2;
+  }
   .free-card {
-    grid-column: 1;
-    min-width: 100%;
+    grid-row: 3;
   }
 }
+
+/* if using small screen */
+/* @media (max-width: 900px) {
+
+} */
 
 /* if using phone screen */
 @media (max-width: 768px) {
   .feature-grid {
     grid-template-columns: 1fr;
+    max-width: 31.5625rem; /* 505px, the min width before ugly word wrapping */
   }
 
   .billed-annually-container {

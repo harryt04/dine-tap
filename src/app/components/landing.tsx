@@ -218,7 +218,7 @@ export const Landing = () => {
             </CardContent>
           </Card>
 
-          <Card className="pricing-card">
+          <Card className="pricing-card pro-card">
             <div className="pricing-card-title">
               <Typography variant="h4">{t('proTierTitle')}</Typography>
               <Typography variant="h5">
@@ -271,7 +271,7 @@ export const Landing = () => {
             </CardContent>
           </Card>
 
-          <Card className="pricing-card">
+          <Card className="pricing-card enterprise-card">
             <div className="pricing-card-title">
               <Typography variant="h4">{t('enterpriseTierTitle')}</Typography>
               <Typography variant="h5">
