@@ -10,8 +10,6 @@ const Admin = () => {
   const { userLoading } = useAuth()
   const { showAdmin } = useFeatureFlags()
 
-  console.log('showAdmin: ', showAdmin)
-
   if (userLoading) return null
   if (!showAdmin) {
     return (
