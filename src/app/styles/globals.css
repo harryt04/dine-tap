@@ -38,3 +38,13 @@ body {
   column-gap: 1rem;
   padding-top: 4rem;
 }
+
+.dark-mode-nav-switch {
+  position: absolute;
+  bottom: 0;
+  place-items: center;
+  justify-content: center;
+  display: grid;
+  width: 100%;
+  padding: 1rem;
+}

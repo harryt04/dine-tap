@@ -6,6 +6,7 @@ import SignUpButton from '../components/signUpButton'
 import { useAuth } from '../context/AuthContext'
 import { useFeatureFlags } from '../context/FeatureFlagsProvider'
 import PersistentDrawerLeft from '../components/navigation'
+import RestaurantIcon from '@mui/icons-material/Restaurant'
 
 const Admin = () => {
   const { userLoading } = useAuth()
@@ -38,9 +39,18 @@ const Admin = () => {
     )
   } // end if (!showAdmin)
 
+  const adminRoutes = [
+    {
+      label: 'Restaurants',
+      icon: <RestaurantIcon />,
+    },
+  ]
+
   return (
     <>
-      <PersistentDrawerLeft />
+      <PersistentDrawerLeft routes={adminRoutes}>
+        <Typography variant="h5">Admin Page</Typography>
+      </PersistentDrawerLeft>
     </>
   )
 }

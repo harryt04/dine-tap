@@ -16,9 +16,6 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-import MailIcon from '@mui/icons-material/Mail'
-import { Button } from '@mui/material'
 import { DarkModeSwitch } from './darkModeSwitch'
 
 const drawerWidth = 240
@@ -72,7 +69,22 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }))
 
-export default function PersistentDrawerLeft() {
+// Define the DineTapDrawerRoute type
+interface DineTapDrawerRoute {
+  label: string
+  icon: React.JSX.Element
+}
+
+// Update the component to take in routes as a prop
+interface PersistentDrawerLeftProps {
+  routes: DineTapDrawerRoute[]
+  children: React.ReactNode
+}
+
+export default function PersistentDrawerLeft({
+  routes,
+  children,
+}: PersistentDrawerLeftProps) {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
@@ -125,37 +137,26 @@ export default function PersistentDrawerLeft() {
             )}
           </IconButton>
         </DrawerHeader>
+
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+          {routes.map((route, index) => (
+            <ListItem key={route.label} disablePadding>
               <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemIcon>{route.icon}</ListItemIcon>
+                <ListItemText primary={route.label} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <DarkModeSwitch />
+        <div className="dark-mode-nav-switch">
+          <DarkModeSwitch />
+        </div>
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Typography paragraph>Your content goes here</Typography>
+        {children}
       </Main>
     </Box>
   )
